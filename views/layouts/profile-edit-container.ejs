@@ -1,0 +1,38 @@
+<div class="userinput-container">
+    <center>
+        <h3>Edit your profile</h3>
+    </center>
+    <div class="signin-container-form">
+        <form action="/signup" method="post">
+            <input type="text" placeholder="Username" name="username" required value="<%= user.username %>"><br>
+            <input type="email" placeholder="email" name="email" required value="<%= user.email %>"><br>
+            <input type="password" placeholder="Password" name="password" value="<%= user.password %>"required><br>
+            <input type="text" placeholder="Institute" name="institute" value="<%= user.institute %>"required><br>
+            <select name="yearofbirth" id="yearofbirth">
+                <option value="unknown" disabled selected >Year of Birth</option>
+                <% for(var index = 1950; index <= 2024; index++) { %>
+                    <option value="<%= index %>"><%= index %></option>
+                <% } %>
+            </select>
+            <select name="gender" id="gender">
+                <option value="unknown" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea placeholder="Description" name="description" maxlength="256" required ><%= user.description%></textarea><br>
+            <label for="coverImage">Profile Picture:</label>
+            <input type="file" id="coverImage" name="image"/><br />
+            <center>
+                <button type="submit">Save Changes</button>
+                <button type="reset">Cancel</button>
+            </center>
+        </form>
+    </div>
+    <script>
+        var drop1 = document.getElementById("gender");
+        drop1.value = "<%= user.gender %>"
+        var drop1 = document.getElementById("yearofbirth");
+        drop1.value = "<%= user.yearOfBirth %>"
+    </script>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/head-common'); -%>
+</head>
+<body>
+    <div class="container">
+        <header>
+        </header>
+        <nav><%- include('layouts/nav-common'); -%></nav>
+        <br><br>
+        <aside><%- include('layouts/aside'); -%></aside>
+        <main class=".main-common">
+            <div class="main-post-div">
+                <h3 style="text-align: center;">My Resource Listings</h3>
+                <% for( let i = 0; i < resources.length; i++ ) { %> <%-
+                    include('layouts/post-container-download',{resource:resources[i]}); -%> <% }
+                    %> 
+            </div>
+        </main>
+        <aside></aside>
+        <footer>
+            <%- include('layouts/footer-common'); -%>
+        </footer>
+    </div>
+</body>
+</html>

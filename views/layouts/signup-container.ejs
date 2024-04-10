@@ -1,0 +1,56 @@
+<div class="userinput-container">
+  <center>
+    <h3>Create an account</h3>
+    <p>
+      Welcome to BookPeer Pioneers. Join our community of learners and readers.
+    </p>
+  </center>
+  <div class="signin-container-form">
+    <form action="/signup" method="post" enctype="multipart/form-data">
+      <input
+        type="text"
+        placeholder="Username"
+        name="username"
+        required
+      /><br />
+      <input
+      type="email"
+      placeholder="email"
+      name="email"
+      required
+    /><br />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        required
+      /><br />
+      <input
+        type="text"
+        placeholder="Institute"
+        name="institute"
+        required
+      /><br />
+      <select name="yearOfBirth">
+        <option value="" disabled selected>Year of Birth</option>
+        <% for(var index = 1950; index <= 2024; index++) { %>
+        <option value="<%= index %>"><%= index %></option>
+        <% } %>
+      </select>
+      <select name="gender" required>
+        <option value="" disabled selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea placeholder="Description" name="description" maxlength="256" required></textarea><br>
+            
+      <label for="image">Profile Picture:</label>
+      <input type="file" id="coverImage" name="image" value="" required />
+      <center><button type="submit">Create Account</button></center>
+    </form>
+  </div>
+  <center>
+    <p>Already have an account? <a href="/signin">Sign In</a></p>
+  </center>
+</div>

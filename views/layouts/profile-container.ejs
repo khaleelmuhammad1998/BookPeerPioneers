@@ -1,0 +1,35 @@
+<div class="post-container">
+  <h3 id="username"><%=items.username%></h3>
+  <div class="post-container-media">
+    <img
+      src="data:image/<%=items.img.contentType%>;base64,
+        <%=items.img.data.toString('base64')%>"
+    />
+  </div>
+  <table>
+    <tr>
+      <th>Email</th>
+      <td id="email"><%=items.email%></td>
+    </tr>
+    <tr>
+      <th>Institute</th>
+      <td id="institute"><%=items.institute%></td>
+    </tr>
+    <tr>
+      <th>Year of Birth</th>
+      <td id="yearOfBirth"><%=items.yearOfBirth%></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td id="gender"><%=items.gender%></td>
+    </tr>
+  </table>
+  <p>
+    <%=items.description%>
+  </p>
+  <br>
+  
+  <center>
+      <a class="post-container-button" href="/profile-edit/<%=items._id%>"><img src="assets/icons/edit.png" alt="Edit Profile">Edit Profile</a>
+  </center>
+</div>

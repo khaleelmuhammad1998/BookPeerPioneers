@@ -1,0 +1,86 @@
+<% if (typeof(resource)!=='undefined') { %>
+
+<div class="userinput-container">
+  <center>
+    <h3>Update Academic Resource</h3>
+  </center>
+  <div class="userinput-container-form">
+    <form action="/resource/update/<%- resource._id %>" method="post">
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%- resource.title %>"
+        placeholder="Title"
+        required
+      /><br />
+      <input
+        type="text"
+        id="author"
+        name="author"
+        value="<%- resource.author %>"
+        placeholder="Author"
+        required
+      /><br />
+      <input
+        type="text"
+        id="year"
+        name="year"
+        value="<%- resource.year%>"
+        placeholder="Year"
+        required
+      /><br />
+      <label for="type">Type:</label><br />
+      <input
+        type="text"
+        id="type"
+        name="type"
+        value="<%- resource.type %>"
+        placeholder="Type"
+        required
+      /><br />
+      <label for="language">Language:</label><br />
+      <input
+        type="text"
+        id="language"
+        name="language"
+        value="<%- resource.language %>"
+        placeholder="Language"
+        required
+      /><br />
+      <textarea id="description" name="description" placeholder="Description">
+ <%- resource.description %></textarea
+      ><label for="frontPage">Thumbnail Picture:</label><br />
+      <input type="file" id="frontPage" name="frontPage" required/><br />
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+
+<% } else { %>
+
+<div class="userinput-container">
+  <center>
+    <h3>Upload Academic Resource</h3>
+  </center>
+  <div class="userinput-container-form">
+    <form action="/addresource" method="post" enctype="multipart/form-data">
+      <input type="text" id="title" name="title" placeholder="Title" required /><br />
+      <input type="text" id="author" name="author" placeholder="Author" required /><br />
+      <input type="text" id="year" name="year" placeholder="Year" required /><br />
+      <input type="text" id="type" name="type" placeholder="Type" required /><br />
+      <input type="text" id="language" name="language" placeholder="Language" required /><br />
+      <textarea id="description" name="description" maxlength="256" placeholder="Description"></textarea><br />
+      <label for="coverImage">Thumbnail Picture:</label>
+      <input type="file" id="coverImage" name="coverImage" /><br />
+      <label for="pdfFile">Document File:</label>
+      <input type="file" id="pdfFile" name="pdfFile" /><br />
+      <input type="text" id="price" name="price" placeholder="Price ($0 - Free)" required /><br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+
+<%}%>

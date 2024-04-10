@@ -1,0 +1,106 @@
+<% if (typeof(resource)!=='undefined') { %>
+<div class="post-container">
+  <h3><%- resource.title %></h3>
+  <table>
+    <tr>
+      <th><em>Category</em></th>
+      <td><em>Academic Resource</em></td>
+    </tr>
+    <tr>
+      <th>Author</th>
+      <td><%- resource.author %></td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td><%- resource.year %></td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td><%- resource.type %></td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td><%- resource.language %></td>
+    </tr>
+  </table>
+  <p><%- resource.description %></p>
+  
+  
+  <div class="post-container-media">
+    <% if (typeof(resource.coverImage)!=='undefined') { %>
+    
+      <img
+        src="data:image/<%=resource.coverImage.contentType%>;base64,
+          <%
+            let base64String;
+            if (typeof resource.coverImage.data === 'strings') {
+              base64String = resource.coverImage.data;
+            } else if (Buffer.isBuffer(resource.coverImage.data)) {
+              base64String = resource.coverImage.data.toString('base64');
+            } else {
+              base64String = '';
+            }
+          %>
+          <%=base64String%>"
+      />
+      <% } else{ %>
+      <img src="assets/images/placeholder-post-picture.png" />
+      <%} %>
+    
+  </div>
+  <br><br>
+  <center>
+    <span class="post-container-price">&dollar;<%= resource.price %></span>
+    <% if (typeof(resource.price)!=='undefined' && resource.price!=0) { %>
+      <a class="post-container-button" style="background-color: #4488cc; color: #ffffff;" href="/checkout?id=<%= resource._id %>&type=resource"><img src="assets/icons/get.png" alt="Get Book">Get Book</a>
+    
+    <% } else { %>
+    
+    <a class="post-container-button" style="background-color: #40c080; color: #ffffff;" href="/resource/download/<%- resource._id %>"><img src="assets/icons/download.png" alt="Download">Download</a>
+    <% }
+    if (typeof(update)!=='undefined' && !update) { %> <% } else { %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="post-container-button" href="/resource/update/<%- resource._id %>"><img src="assets/icons/edit.png" alt="Update"></a>
+      <a class="post-container-button" href="/resource/delete/<%- resource._id %>"><img src="assets/icons/delete.png" alt="Remove"></a>
+    <% } %>
+  </center>
+</div>
+
+<% } else { %>
+
+<div class="post-container">
+  <h3>Lorem Ipsum</h3>
+  <table>
+    <tr>
+      <th>Author</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td>1234</td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+  </table>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <div class="post-container-media">
+    <img src="assets/images/placeholder-post-picture.png" />
+  </div>
+  <a id="post-container-download-button" >Download</a>
+  <br /><br />
+  <center>
+    <a href="">Update</a>
+    &nbsp;
+    <a href="">Remove</a>
+  </center>
+</div>
+<%}%>

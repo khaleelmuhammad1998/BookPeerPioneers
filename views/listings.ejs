@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head-common'); -%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.get("getListings", (data) => {
+          console.log(data);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header></header>
+      <nav><%- include('layouts/nav-common'); -%></nav>
+      <br><br>
+      <aside><%- include('layouts/aside'); -%></aside>
+      <main class=".main-common">
+        <div class="main-post-div">
+          <h3 style="text-align: center;">My Book Listings</h3>
+          <% for( let i = 0; i < listings.length; i++ ) { %>
+          <%-include('layouts/post-container',{listing:listings[i]}); -%> <% } %>
+        </div>
+      </main>
+      <footer><%- include('layouts/footer-common'); -%></footer>
+    </div>
+  </body>
+</html>

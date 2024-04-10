@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head-common'); -%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <nav><%- include('layouts/nav-common'); -%></nav>
+      <br><br>
+      <aside></aside>
+      <main class=".main-common">
+        <%- include('layouts/profile-container',{item: items}); -%>
+      </main>
+      <aside></aside>
+      <footer><%- include('layouts/footer-common'); -%></footer>
+    </div>
+  </body>
+</html>

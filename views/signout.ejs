@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/head-common'); -%>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <%- include('layouts/header-common'); -%>
+        </header>
+        <div class="nav-public">
+            <%- include('layouts/nav-public'); -%>
+        </div>
+        <br>
+        <main class=".main-common">
+            <div class="post-container">
+                <h3><center>Signed Out</center></h3>
+                <div class="post-container-media">
+                    <img src="assets/images/placeholder-profile-picture.png">
+                </div>
+                <center>
+                    <p>You have been signed out of BookPeer.</p>
+                    <p>Get back on BookPeer? <a href="/signin">Sign In</a></p>
+                </center>
+            </div>
+        </main>
+        <aside></aside>
+        <footer>
+            <%- include('layouts/footer-common'); -%>
+        </footer>
+    </div>
+</body>
+</html>

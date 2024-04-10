@@ -1,0 +1,43 @@
+<div class="post-container">
+    <center><span style="color:#208040; font-size: 20px; font-weight: 700;">Purchase Complete</span><br><br>Thank you for purchasing.</center>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Title</th>
+            <td><%= item.title %></td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td><%= item.type %></td>
+        </tr>
+        <tr>
+            <th>Seller</th>
+            <td><%= seller %></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>&dollar;<%= item.price %></td>
+        </tr>
+        <tr>
+            <th>Tax(13%)</th>
+            <td>&dollar;<%= (Number(item.price)*0.13).toFixed(2) %></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>&dollar;<%= (Number(item.price)*1.13).toFixed(2) %></td>
+        </tr>
+        <tr>
+            <th>Purchase ID</th>
+            <td><%= transaction._id %></td>
+        </tr>
+    </table>
+    
+    
+    <br><br>
+    <center><% if (type === "resource") { %>
+        <a class="post-container-button" style="background-color: #40c080; color: #ffffff;" href="/resource/download/<%- item._id %>"><img src="assets/icons/download.png" alt="Download">Download</a>
+    <% } %>
+        <a class="post-container-button" href="/">Return Home</a>
+    </center>
+</div>

@@ -1,0 +1,285 @@
+/** Document. **/
+
+html {
+  font-family: "Open Sans", sans-serif;
+  background-color: #dddddd;
+}
+
+/** Body. **/
+
+.container {
+  width: 100%;
+}
+
+/** Header. **/
+
+.header-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #88ccff;
+  border: 1px solid #80c0f0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #aaaaaa;
+}
+
+.header-common img {
+  max-width: 48px;
+  margin-left: 8px;
+  margin-right: 16px;
+}
+
+.header-common h1 {
+  text-align: center;
+  color: #224488;
+}
+
+/** Nav. **/
+
+nav {
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background-color: #4488cc;
+  border: 1px solid #4080c0;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px #aaaaaa;
+}
+
+.nav-common {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-common a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-common-side {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #224488;
+}
+
+.nav-common-side a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-public {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  text-align: center;
+  background-color: #4488cc;
+  border: 1px solid #4080c0;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px #aaaaaa;
+}
+
+.nav-public div a {
+  margin-left: 20px;
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/** Main. **/
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px;
+  padding: 16px;
+}
+
+/* TODO: Implement. */
+.main-post-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 640px;
+}
+
+.post-container {
+  width: 600px;
+  height: 540px;
+  margin: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 8px 8px 8px #aaaaaa;
+}
+
+.post-container h3 {
+  color: #224488;
+}
+
+.post-container table {
+  width: 100%;
+}
+
+.post-container table tr th {
+  text-align: left;
+}
+
+.post-container-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-container-media img {
+  max-width: 128px;
+  max-height: 128px;
+  margin: 8px;
+}
+
+/** TODO: Implement. */
+.post-container-price {
+  padding-right: 12px;
+  color: #4488cc;
+  font-size: larger;
+  font-weight: 700;
+}
+
+/** TODO: Implement. */
+.post-container-button {
+  padding: 8px;
+  width: 100%;
+  background-color: #dddddd;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 1px 1px #f0f0f0;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/** TODO: Remove. */
+.post-container button {
+  padding: 8px;
+  width: 100%;
+  background-color: #44cc88;
+  border: 1px solid #40c080;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.post-container-button img {
+  align-items: center;
+  height: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+/** TODO: Remove. */
+#post-container-download-button {
+  padding: 8px;
+  width: 100%;
+  background-color: #ffff44;
+  border: 1px solid #f0f040;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signin-container-form {
+  padding: 8px;
+  margin: 8px;
+}
+
+.signin-container-form input,
+select {
+  padding: 8px;
+  margin: 8px;
+  width: 520px;
+}
+
+.signin-container-form button {
+  padding: 8px;
+  margin: 8px;
+  width: 520px;
+}
+
+.userinput-container {
+  width: 600px;
+  height: 720px;
+  margin: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 8px 8px 8px #aaaaaa;
+}
+
+.userinput-container-form {
+  padding: 8px;
+  margin: 8px;
+}
+
+.userinput-container-form input,
+textarea {
+  padding: 8px;
+  margin: 8px;
+  width: 520px;
+}
+
+/** Aside. **/
+
+aside {
+  position: absolute;
+  width: 15%;
+}
+
+aside ul {
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px #aaaaaa;
+  list-style-type: none;
+}
+
+/** Footer. **/
+
+.footer-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  background-color: #88ccff;
+  border: 1px solid #80c0f0;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px #aaaaaa;
+}
+
+.footer-common a {
+  margin-left: 20px;
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #224488;
+  font-weight: 600;
+  text-decoration: none;
+}

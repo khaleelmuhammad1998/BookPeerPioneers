@@ -1,0 +1,79 @@
+<% if (typeof(book)!=='undefined') { %>
+
+<div class="userinput-container">
+  <center>
+    <h3>Update Book Listing</h3>
+  </center>
+  <div class="userinput-container-form">
+    <form action="/post/update/<%- book._id %>" method="post">
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%- book.title %>"
+        required
+      /><br />
+      <input
+        type="text"
+        id="author"
+        name="author"
+        value="<%- book.author %>"
+        required
+      /><br />
+      <input
+        type="text"
+        id="year"
+        name="year"
+        value="<%- book.year %>"
+        required
+      /><br />
+      <input
+        type="text"
+        id="type"
+        name="type"
+        value="<%- book.type %>"
+        required
+      /><br />
+      <input
+        type="text"
+        id="language"
+        name="language"
+        value="<%- book.language %>"
+        required
+      /><br />
+      <textarea id="description" name="description" maxlength="256">
+<%- book.description %></textarea
+      ><br />
+      <!-- <label for="picture">Upload Picture:</label><br>
+              <input type="file" id="picture" name="picture"><br>
+              <br> -->
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+<% } else { %>
+
+<div class="userinput-container">
+  <center>
+    <h3>Add Book Listing</h3>
+  </center>
+  <div class="userinput-container-form">
+    <form action="/addpost" method="post" enctype="multipart/form-data">
+      <input type="text" id="title" name="title" placeholder="Title" required /><br />
+      <input type="text" id="author" name="author" placeholder="Author" required /><br />
+      <input type="text" id="year" name="year" placeholder="Year" required /><br />
+      <input type="text" id="type" name="type" placeholder="Type" required /><br />
+      <input type="text" id="language" name="language" placeholder="Language" required /><br />
+      <textarea id="description" name="description" maxlength="256" placeholder="Description"></textarea><br />
+      <label for="coverImage">Cover Page Picture:</label>
+      <input type="file" id="coverImage" name="coverImage" required /><br />
+      <label for="frontPage">Front Page Picture:</label>
+      <input type="file" id="frontPage" name="frontPage" required/><br />
+      <input type="text" id="price" name="price" placeholder="Price ($0 - Free)" required /><br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</div>
+
+<%}%>

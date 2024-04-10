@@ -1,0 +1,119 @@
+<% if (typeof(listing)!=='undefined') { %>
+<div class="post-container">
+  <h3><%= listing.title %></h3>
+  <table>
+    <tr>
+      <th><em>Category</em></th>
+      <td><em>Book Listing</em></td>
+    </tr>
+    <tr>
+      <th>Author</th>
+      <td><%= listing.author %></td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td><%= listing.year %></td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td><%= listing.type %></td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td><%= listing.language %></td>
+    </tr>
+  </table>
+  <p><%= listing.description %></p>
+  
+  <div class="post-container-media">
+    <script>
+      console.log(typeof(listing.coverImage)!=='undefined')
+    </script>
+    <% if (typeof(listing.coverImage)!=='undefined') { %>
+    
+    <img
+      src="data:image/<%=listing.coverImage.contentType%>;base64,
+        <%
+          let base64String;
+          if (typeof listing.coverImage.data === 'strings') {
+            base64String = listing.coverImage.data;
+          } else if (Buffer.isBuffer(listing.coverImage.data)) {
+            base64String = listing.coverImage.data.toString('base64');
+          } else {
+            base64String = '';
+          }
+        %>
+        <%=base64String%>"
+    />
+    <% } else{ %>
+    <img src="assets/images/placeholder-post-picture.png" />
+    <%} if (typeof(listing.frontPage)!=='undefined') { %>
+    <img
+      src="data:image/<%=listing.frontPage.contentType%>;base64,
+          <%
+            let base64String;
+            if (typeof listing.frontPage.data === 'strings') {
+              base64String = listing.frontPage.data;
+            } else if (Buffer.isBuffer(listing.frontPage.data)) {
+              base64String = listing.frontPage.data.toString('base64');
+            } else {
+              base64String = '';
+            }
+          %>
+          <%=base64String%>"
+    />
+    <% }else{ %>
+    <img src="assets/images/placeholder-post-picture.png" />
+    <%} %>
+
+    <!-- <img src="assets/images/placeholder-post-picture.png" /> -->
+  </div>
+  <br><br>
+  <center>
+    <span class="post-container-price">&dollar;<%= listing.price %></span>
+    <a class="post-container-button" style="background-color: #4488cc; color: #ffffff;" href="/checkout?id=<%= listing._id %>&type=book"><img src="assets/icons/get.png" alt="Get Book">Get Book</a>
+    <% if (typeof(update)!=='undefined' && !update) { %> <% } else { %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="post-container-button" href="/post/update/<%- listing._id %>"><img src="assets/icons/edit.png" alt="Update"></a>
+      <a class="post-container-button" href="/post/delete/<%- listing._id %>"><img src="assets/icons/delete.png" alt="Remove"></a>
+    <% } %>
+  </center>
+</div>
+<% } else { %>
+<div class="post-container">
+  <h3>Lorem Ipsum</h3>
+  <table>
+    <tr>
+      <th>Author</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td>1234</td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td>Lorem Ipsum</td>
+    </tr>
+  </table>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <div class="post-container-media">
+    <img src="assets/images/placeholder-post-picture.png" />
+    <img src="assets/images/placeholder-post-picture.png" />
+  </div>
+  <button>Get Book</button>
+  <br /><br />
+  <center>
+    <a href="">Update</a>
+    &nbsp;
+    <a href="">Remove</a>
+  </center>
+</div>
+<% } %>
